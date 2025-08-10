@@ -1,9 +1,9 @@
 function getComputerChoice() {
     let answer = Math.random();
 
-    if (answer >= .66) {
+    if (answer < 1/3) {
         return 'rock'
-    } if (answer >= .33) {
+    } else if (answer < 2/3) {
         return 'paper'
     } else {
         return 'scissors'
