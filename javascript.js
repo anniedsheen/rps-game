@@ -1,9 +1,9 @@
 function getComputerChoice() {
-    let answer = Math.random();
+    let computerChoice = Math.random();
 
-    if (answer < 1/3) {
+    if (computerChoice < 1/3) {
         return 'rock'
-    } else if (answer < 2/3) {
+    } else if (computerChoice < 2/3) {
         return 'paper'
     } else {
         return 'scissors'
@@ -17,3 +17,14 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 */
+
+// Create function getHumanChoice
+// Create str variable humanChoice
+// Prompt user for their choice
+// Store user's choice in variable humanChoice
+// Return user's choice
+
+function getHumanChoice() {
+    let humanChoice = prompt('rock, paper or scissors?');
+    return humanChoice;
+}
