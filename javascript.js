@@ -1,26 +1,29 @@
-function getComputerChoice() {
-    let computerChoice = Math.random();
+function playGame() {
+    function getChoices() {
+        function getComputerChoice() {
+            const computerChoice = Math.random();
 
-    if (computerChoice < 1/3) {
-        return 'rock';
-    } else if (computerChoice < 2/3) {
-        return 'paper';
-    } else {
-        return 'scissors';
+            if (computerChoice < 1/3) {
+                return 'rock';
+            } else if (computerChoice < 2/3) {
+                return 'paper';
+            } else {
+                return 'scissors';
+            }
+        }
+
+        function getHumanChoice() {
+            const humanInput = prompt('rock, paper or scissors?');
+            const humanChoice = humanInput.toLowerCase();
+            return humanChoice;
+        }
+
+        const computerChoice = getComputerChoice();
+        const humanChoice = getHumanChoice();
+        return [humanChoice, computerChoice];
     }
-}
 
-
-function getHumanChoice() {
-    let humanInput = prompt('rock, paper or scissors?');
-    let humanChoice = humanInput.toLowerCase();
-    return humanChoice;
-}
-
-let humanScore = 0;
-let computerScore = 0;
-
-function playRound(humanChoice, computerChoice) {
+    function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
             console.log ("It's a draw!");
         } else if (humanChoice === "rock" && computerChoice === "paper") {
@@ -42,9 +45,25 @@ function playRound(humanChoice, computerChoice) {
             console.log ("You lose! Rock beats scissors.");
             computerScore++;
         } 
+    }
+
+    let results = getChoices();
+    playRound(results[0], results[1]);
+
+    results = getChoices();
+    playRound(results[0], results[1]);
+
+    results = getChoices();
+    playRound(results[0], results[1]);
+
+    results = getChoices();
+    playRound(results[0], results[1]);
+
+    results = getChoices();
+    playRound(results[0], results[1]);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanScore = 0;
+let computerScore = 0;
 
-playRound(humanSelection, computerSelection);
+playGame();
